@@ -13,7 +13,7 @@ jobs:
         if: ${{env.NAME != 'pull'}}
         run: echo "c'est un push !"
       
-       - name: Hello
+       - name: "Push""
         if: ${{env.NAME == 'pull'}}
         run: echo "c'est un pull request !"
 
@@ -24,6 +24,6 @@ jobs:
         if: ${{env.NAME != 'push'}}
         run: echo "c'est un pull request !"
       
-       - name: Hello
+       - name: "pull"
         if: ${{env.NAME == 'push'}}
         run: echo "c'est un "Push" request !"
