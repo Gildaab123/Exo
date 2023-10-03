@@ -1,0 +1,25 @@
+name: Variables
+# Event trigger qui implique de déclencher le workflow à la main
+on: workflow_dispatch
+env:
+  NAME: Francois
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    env:
+      ENTREPRISE: Semifir
+    steps:
+      - name: "Dit bonjour"
+        run: echo "Salut $NAME! Tu travailles ches $ENTREPRISE ? Alors bon $DAY à toi !"
+        env:
+          DAY: Mardi
+      
+      - name: "Mardi ?"
+        run: echo "Quel jour somme-nous ? --> $DAY !"
+
+  say_goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Dit au revoir"
+        run: echo "Au revoir $NAME! POur QUelle entreprise travailles-tu ? $ENTREPRISE"
